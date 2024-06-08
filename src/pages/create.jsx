@@ -1,32 +1,44 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Create = () => {
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const forward = useNavigate()
 
     useEffect(() => {
-        const updateAgenda = async () => {
-            let response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/mandoromero", {
-                method: "PUT",
+        const createAgenda = async () => {
+            let response = await fetch("https://playground.4geeks.com/contact/agendas/mandoromero", {
+                method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: name,
-                    address: address,
-                    phone: phoneNumber,
-                    email: email
-                })
+               
+        
             });
             let data = await response.json();
             console.log(data);
         };
 
         createAgenda();
-    }, [name, address, email, phoneNumber]);
+    }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        let response = await fetch('https://playground.4geeks.com/contact/agendas/mandoromero/contacts', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: name,
+                address: address,
+                phone: phoneNumber,
+                email: email
+            })   
+        })
+
+        let data = response.json;
+        forward ('/')
     };
 
     return (
@@ -49,7 +61,7 @@ const Create = () => {
                     <label htmlFor="phoneNumber" style={{ display: "block", marginBottom: "5px" }}>Phone Number</label>
                     <input id="phoneNumber" type="text" onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Phone Number" style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
                 </div>
-                <button type="submit">Add Contact</button>
+                <button onClick={handleSubmit}type="submit">Add Contact</button>
             </form >
             <a id="backIoContact" href="#">Back to Contacts</a>
         </div >
