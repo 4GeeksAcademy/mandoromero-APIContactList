@@ -7,9 +7,9 @@ const Create = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
 
     useEffect(() => {
-        const createAgenda = async () => {
+        const updateAgenda = async () => {
             let response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/mandoromero", {
-                method: "POST",
+                method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     name: name,
@@ -49,8 +49,9 @@ const Create = () => {
                     <label htmlFor="phoneNumber" style={{ display: "block", marginBottom: "5px" }}>Phone Number</label>
                     <input id="phoneNumber" type="text" onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Phone Number" style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
                 </div>
-                <button type="submit" style={{backGroundColor: "blue",}}>Add Contact</button>
+                <button type="submit">Add Contact</button>
             </form >
+            <a id="backIoContact" href="#">Back to Contacts</a>
         </div >
     );
 };
