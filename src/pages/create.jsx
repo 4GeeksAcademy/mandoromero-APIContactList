@@ -66,6 +66,6 @@ const Create = () => {
             <a id="backIoContact" href="#">Back to Contacts</a>
         </div >
     );
-};
+}
 
 export default Create;

@@ -5,7 +5,7 @@ const Update =() => {
     const [name, updateName] = useState("");
     const [address, updateAddress] = useState("");
     const [email, updateEmail] = useState("");
-    const [phoneNumnber, updatePhoneNumber] = useState("");
+    const [phoneNumber, updatePhoneNumber] = useState("");
 
     useEffect(() => {
         const updateAgenda = async (id) => {
@@ -26,19 +26,22 @@ const Update =() => {
        updateAgenda();
     }, [name, address, email, phoneNumber]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();const handleSubmit = (e) => {
+    
+       const handleSubmit = (e) => {
             e.preventDefault();
     };
 
-    retrun (
+    return (
         <div>
             <div>
-                <img>Image here</img>
+                {/* image here */}
             </div>
             <div>
                 <i class="fa-solid fa-location-dot"></i>
                 <p>Mike Anamendolla</p>
+            </div>
+            <div>
+                <p>123 somewhere ave, some city some state, 00000</p>
             </div>
             <div>
                 <i class="fa-solid fa-phone"></i>
@@ -55,10 +58,7 @@ const Update =() => {
             
         </div>
     )
-    // <script src="https://kit.fontawesome.com/77743ea4cc.js" crossorigin="anonymous"></script>
-    
-
     }
-}
+
 
 export default Update;
