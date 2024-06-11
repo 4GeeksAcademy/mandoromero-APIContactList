@@ -9,7 +9,7 @@ const Update =() => {
 
     useEffect(() => {
         const updateAgenda = async (id) => {
-            let response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/mandoromero", {
+            let response = await fetch('https://playground.4geeks.com/contact/agendas/mandoromero/contacts', {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -33,29 +33,7 @@ const Update =() => {
 
     return (
         <div>
-            <div>
-                {/* image here */}
-            </div>
-            <div>
-                <i class="fa-solid fa-location-dot"></i>
-                <p>Mike Anamendolla</p>
-            </div>
-            <div>
-                <p>123 somewhere ave, some city some state, 00000</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-phone"></i>
-                <p>(870)288-4149</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-envelope">/</i>
-                <p>mike.ana@eample.com</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-pen"></i>
-                <i class="fa-solid fa-trash"></i>
-            </div>
-            
+            something
         </div>
     )
     }

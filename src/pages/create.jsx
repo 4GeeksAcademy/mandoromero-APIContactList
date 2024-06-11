@@ -42,7 +42,7 @@ const Create = () => {
     };
 
     return (
-        <div style={{maxWidth: "800px", margin: "auto", padding: "20px", border: "1px solid #ccc", borderRadius: "5px", backGroundColor: "#b8b8b8",}}>
+        <div style={{ maxWidth: "800px", margin: "auto", padding: "20px", border: "1px solid #ccc", borderRadius: "5px", backGroundColor: "#b8b8b8",}}>
             <h1 style={{ textAlign: "center" }}>Add a new Contact</h1>
             <form onSubmit={handleSubmit} styles={{backGroundColor: "ccc"}}>
                 <div style={{ marginBottom: "10px" }}>
