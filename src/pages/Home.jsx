@@ -19,28 +19,28 @@ export const Home = () => {
   }, []);
 
   return (
-    <div style={{ width: "900px", border: "1px solid #ccc" ,}}>
-      <div style={{ maxWidth: "900px", maxheight: "100px", margin: "auto", padding: "20px", border: "1px solid #ccc", borderRadius: "5px", backGroundColor: "#b8b8b8", display: "flex",}}>
+    <div className="container" style={{ width: "1000px", border: "1px solid #ccc" ,}}>
+      <div style={{ maxWidth: "900px", maxHeight: "100px", margin: "auto", padding: "5px", border: "px solid #ccc", borderRadius: "5px", backGroundColor: "#b8b8b8", display: "flex", margin: "5px 10px",}}>
         <div>
           <div>
-            <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="150px" height="150px" />
+            <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="50px" height=",50px" />
           </div>
         </div> 
         <div >
           <div> 
-            <h5>Mike Anamendolla</h5>
+            <h5 style={{ marginLeft: "10px",}}>Mike Anamendolla</h5>
             <div style={{ display: "flex", }}>
               <i className="fa-solid fa-location-dot"></i>
-              <p>123 somewhere ave, some city some state, 00000</p>
+              <p style={{ fontSize: "12px", height: "5px", }}>123 somewhere ave, some city some state, 00000</p>
             </div>  
           </div>
-          <div>
-            <i className="fa-solid fa-phone"></i>
-            <p>(870)288-4149</p>
+          <div style={{ display: "flex",}}>
+            <i className="fa-solid fa-phone" styles={{ marginLeft: "10px",}}></i>
+            <p style={{ fontSize: "12px", height: "5px", marginLeft: "5px"}}>(870)288-4149</p>
           </div>
-          <div>
+          <div style={{ display: "flex"}}>
             <i className="fa-solid fa-envelope">/</i>
-            <p>mike.ana@eample.com</p>
+            <p style={{ fontSize: "12px", height: "5px", marginLeft: "5px",}}>mike.ana@eample.com</p>
           </div>
         </div>    
         <div>
