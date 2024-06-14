@@ -64,19 +64,19 @@ export const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function getContact() {
+    async function getContacts() {
       try {
-        const response = await fetch("api url");
+        const response = await fetch("https://playground.4geeks.com/contact/agendas/mandoromero/contacts");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setContacts(data);
+        setContacts(data.contacts); // Ensure the response structure is correctly accessed
       } catch (error) {
         console.error("Error fetching contacts:", error);
       }
     }
-    getContact();
+    getContacts();
   }, []);
 
   return (

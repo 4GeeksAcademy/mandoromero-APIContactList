@@ -69,6 +69,7 @@
 // }
 
 // export default Create;import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
@@ -81,15 +82,14 @@ const Create = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://playground.4geeks.com/apis/fake/contact/', {
+            const response = await fetch('https://playground.4geeks.com/contact/agendas/mandoromero/contacts', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    agenda_slug: "mandoromero", // Make sure this matches the correct agenda
-                    full_name: name,
+                    name: name,
+                    phone: phoneNumber,
                     email: email,
-                    address: address,
-                    phone: phoneNumber
+                    address: address
                 })
             });
 
@@ -135,3 +135,4 @@ const Create = () => {
 };
 
 export default Create;
+
