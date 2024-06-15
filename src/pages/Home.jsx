@@ -80,33 +80,33 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="container" style={{ width: "1000px", border: "1px solid #ccc" }}>
-      <button onClick={() => navigate('/create')}>Add to contact</button> 
+    <div className="container" style={{ width: "1000px", border: "1px solid #ccc", backgroundColor: "#a3b5c0", paddingBottom: "40px" }}>
+      <button style={{ background: "linear-Gradient(#f7e7ce, #f5d041)", border: "3px solid #ffd300", borderRadius: "5%", Color: "7f7d9c", marginLeft: "800px", marginTop: "20px", }} onClick={() => navigate('/create')}>Add to contact</button> 
       {contacts.map((contact, index) => (
         <div 
           key={index}
           style={{ maxWidth: "900px", maxHeight: "100px", margin: "auto", padding: "5px", border: "1px solid #ccc", borderRadius: "5px", backgroundColor: "#b8b8b8", display: "flex", margin: "5px 10px" }}>
           <div>
-            <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="75px" height="75px" alt="Profile" />
+            <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="90px" height="80px" alt="Profile" />
           </div>
           <div style={{ marginLeft: "10px" }}>
-            <h5>{contact.name}</h5>
-            <div style={{ display: "flex" }}>
+            <h5 style={{ marginLeft: "30" }}>{contact.name}</h5>
+            <div style={{ display: "flex", marginLeft: "20px" }}>
               <i className="fa-solid fa-location-dot"></i>
               <p style={{ fontSize: "12px", height: "5px", marginLeft: "5px" }}>{contact.address}</p>
             </div>  
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", marginLeft: "20px" }}>
               <i className="fa-solid fa-phone"></i>
               <p style={{ fontSize: "12px", height: "5px", marginLeft: "5px" }}>{contact.phone}</p>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", marginLeft: "20px" }}>
               <i className="fa-solid fa-envelope"></i>
               <p style={{ fontSize: "12px", height: "5px", marginLeft: "5px" }}>{contact.email}</p>
             </div>
           </div>    
           <div>
-            <i className="fa-solid fa-pen"></i>
-            <i className="fa-solid fa-trash"></i>
+            <i className="fa-solid fa-pen" style={{ marginLeft: "350px" }}></i>
+            <i className="fa-solid fa-trash"style={{ marginLeft: "30px" }}></i>
           </div>
         </div>
       ))}
