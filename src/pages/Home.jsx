@@ -63,7 +63,26 @@ export const Home = () => {
   );
 };
 
+const initializeUser = async() => {
+  const response = await fetch(`/users/mandoromero`,{
+
+    Method: 'GET',
+    headers: {
+      'Content-Tuype': 'application/json'
+    }
+  })
+}
 
 
-
+if (response.ok) {
+    const data = await response.jason()
+      setList(data.todos)
+} else {
+  await fetch (`https://plalyground.4geeks.com/todo/users/mandoromero`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+}
 export default Home;
