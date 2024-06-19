@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
+
 const Delete = ({ id }) => {
   const [deleted, setDeleted] = useState(false);
+ 
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`https://playground.4geeks.com/contact/doc/agenda/user/${id}`, {
+      const response = await fetch(`http://playground.4geeks.com/contact/agendas/mandoromero/contacts/{id}`, {
         method: "DELETE"
       });
       if (response.ok) {

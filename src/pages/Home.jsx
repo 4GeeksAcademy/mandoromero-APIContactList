@@ -29,13 +29,14 @@ export const Home = () => {
 
   const deleteContact = async (id) => {
     try {
-      const response = await fetch(`https://playground.4geeks.com/contact/${id}`, {
+      const response = await fetch(`playground.4geeks.com/contact/agendas/mandoromero/contacts/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
         // Remove the contact from state
         setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
         console.log("Contact deleted successfully");
+        window.location.reload()
       } else {
         throw new Error(`Failed to delete contact with ID: ${id}`);
       }
