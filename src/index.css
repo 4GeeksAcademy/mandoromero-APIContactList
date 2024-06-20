@@ -1,0 +1,20 @@
+/* const initializeUser = async () => {
+    const response = await fetch(`/users/mandoromero`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    if (response.ok) {
+        const data = await response.json();
+        // Assume the data includes todos
+        setList(data.todos);
+    } else {
+        await fetch(`https://playground.4geeks.com/todo/users/mandoromero`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+}; */

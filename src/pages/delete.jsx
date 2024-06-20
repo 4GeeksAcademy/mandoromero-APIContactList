@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-const Delete = ({ id }) => {
+const Delete = () => {
   const [deleted, setDeleted] = useState(false);
   const [error, setError] = useState(null);
-  const slug = "mandoromero"; 
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const slug = "mandoromero";
 
   const handleDelete = async () => {
-    setError(null);  // Reset error state before making the request
+    setError(null); 
+
+   
     const url = `https://playground.4geeks.com/contact/agendas/${slug}/contacts/${id}`;
 
-    console.log("DELETE request URL:", url);  // Log the URL being requested
+    console.log("DELETE request URL:", url); 
 
     try {
       const response = await fetch(url, {
@@ -19,11 +24,12 @@ const Delete = ({ id }) => {
         }
       });
 
-      console.log('Response status:', response.status);  // Log status
-      console.log('Response:', response);  // Log entire response
+      console.log('Response status:', response.status); 
+      console.log('Response:', response); 
 
       if (response.status === 204 || response.status === 200) {
         setDeleted(true);
+        navigate('/'); 
       } else {
         const errorData = await response.json();
         console.error("Failed to delete contact:", errorData);
