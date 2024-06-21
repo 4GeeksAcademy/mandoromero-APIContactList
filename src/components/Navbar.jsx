@@ -5,8 +5,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
-				<h4>By: Armando Romero</h4>
-				
+				<h1 style={{ margin: "auto"  }}>REACT JS Contact List</h1>
 			</div>
 		</nav>
 	);

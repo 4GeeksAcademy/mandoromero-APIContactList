@@ -54,7 +54,7 @@ export const Home = () => {
     if (response.ok) {
         const data = await response.json();
         // Assume the data includes todos
-        setList(data.todos);
+        setContacts(data.contacts);
     } else {
         await fetch(`https://playground.4geeks.com/todo/users/mandoromero`, {
             method: 'POST',
@@ -76,10 +76,10 @@ useEffect(() => {
         <button style={{ background: "linear-gradient(#f7e7ce, #f5d041)", color: "#060000", border: "3px solid #ffd300", borderRadius: "5%", marginTop: "20px" }} onClick={() => navigate('/create')}>Add to contact</button>
       </div>
       {contacts.map((contact, index) => (
-        <div key={index} style={{ maxWidth: "750px", color: "#060000", margin: "auto", padding: "5px", border: "1px solid #ccc", borderRadius: "5px", backgroundColor: "#08415c", margin: "5px 10px" }}>
+        <div key={index} style={{ maxWidth: "750px", color: "#060000", padding: "5px", border: "1px solid #ccc", borderRadius: "5px", backgroundColor: "#08415c", margin: "5px 10px" }}>
           <div style={{ display: "flex" }}>
             <div>
-              <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="90px" height="80px" alt="Profile" />
+              <img src="https://www.clipartkey.com/mpngs/m/29-297748_round-profile-image-placeholder.png" width="100px" height="90px" alt="Profile" />
             </div>
             <div style={{ color: "#ffffff", marginLeft: "25px" }}>
               <h5>{contact.name}</h5>
