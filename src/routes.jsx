@@ -9,7 +9,7 @@ import { Layout } from "./pages/Layout";
 import { Home  }from "./pages/Home";
 import Create from "./pages/create";
 import Update from "./pages/update";
-import Delete from "./pages/delete";
+// import Delete from "./pages/delete";
 import React from "react";
 import getState from "./store";
 
@@ -28,7 +28,7 @@ export const router = createBrowserRouter(
       =  <Route path= "/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/edit/:id" element={<Update />} />
-        <Route path="/delete" element={<Delete />} />
+        {/* <Route path="/delete" element={<Delete />} /> */}
         <Route path="/store" element ={<getState />} />
       </Route>
     )

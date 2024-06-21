@@ -28,22 +28,47 @@ export const Home = () => {
   };
 
   const deleteContact = async (id) => {
-    try {
-      const response = await fetch(`playground.4geeks.com/contact/agendas/mandoromero/contacts/${id}`, {
-        method: 'DELETE',
-      });
-      if (response.ok) {
-        // Remove the contact from state
-        setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
-        console.log("Contact deleted successfully");
-        window.location.reload()
-      } else {
-        throw new Error(`Failed to delete contact with ID: ${id}`);
-      }
-    } catch (error) {
-      console.error("Error deleting contact:", error);
+    let url = `https://playground.4geeks.com/contact/agendas/mandoromero/contacts/${id}`
+    console.log(url)
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: { "Content-Type": "application/json" }
+    })
+    if (response.ok) {
+      // Remove the contact from state
+      setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
+      console.log("Contact deleted successfully");
+      window.location.reload()
+    } else {
+      await new Error(`Failed to delete contact with ID: ${id}`);
     }
   };
+
+  const initializeUser = async () => {
+    const response = await fetch(`http://playground.4geeks.com/contact/agendas/mandoromero`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    if (response.ok) {
+        const data = await response.json();
+        // Assume the data includes todos
+        setList(data.todos);
+    } else {
+        await fetch(`https://playground.4geeks.com/todo/users/mandoromero`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+};
+
+useEffect(() => {
+  initializeUser()
+}, [])
+
 
   return (
     <div className="container" style={{ width: "800px", border: "1px solid #ccc", backgroundColor: "#8092ac", paddingBottom: "40px" }}>
